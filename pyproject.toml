@@ -6,7 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "bs4>=0.0.2",
+    "langdetect>=1.0.9",
     "requests>=2.32.4",
+    "sacremoses>=0.1.1",
+    "sentencepiece>=0.2.0",
     "torch>=2.7.1",
     "transformers>=4.54.1",
 ]

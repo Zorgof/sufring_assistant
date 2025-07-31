@@ -4,7 +4,7 @@ Main application entry point for summarizing articles.
 
 from user_controller import UserController
 from chunker import Chunker
-from model import Model
+from models import Models
 
 from transformers.utils.logging import set_verbosity_error
 
@@ -20,7 +20,7 @@ def main():
             return
         chunks = Chunker.chunk_text(article, 1024)
         UserController.show_message("Summarizing the article...")
-        summarizer = Model()
+        summarizer = Models()
         summaries = summarizer.summarize_chunks(chunks)
         UserController.show_summary(summaries)
     except ImportError as e:
