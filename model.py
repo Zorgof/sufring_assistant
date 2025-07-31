@@ -1,7 +1,11 @@
+"""Class for model configuration and summarization of the LLM response.
+This module handles the configuration of the summarization model and provides methods to summarize text chunks.
+"""
+
 from transformers import pipeline
 
 class Model:
-    """Konfiguruje i obsługuje model podsumowujący."""
+    """Class to control the summarization model."""
     def __init__(self, model_name="facebook/bart-large-cnn", device=0):
         self.summarizer = pipeline(
             "summarization",
@@ -9,7 +13,13 @@ class Model:
             device=device
         )
 
-    def summarize_chunks(self, chunks):
+    def summarize_chunks(self, chunks: list) -> list:
+        """Summarizes a list of text chunks.
+        Args:
+            chunks (list): List of text chunks to summarize.
+        Returns:
+            list: List of summarized text strings.
+        """
         summaries = []
         for i, chunk in enumerate(chunks):
             try:
