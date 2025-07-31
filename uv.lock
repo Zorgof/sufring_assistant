@@ -616,7 +616,7 @@ wheels = [
 ]
 
 [[package]]
-name = "sufring-assistant"
+name = "surfing-assistant"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
